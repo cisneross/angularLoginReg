@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Register</h2>
+    <div class="container" class="mxauto" style="width: 200px;" >
+          <img src="http://1000springs.org.nz/static/img/icons/login.png" class="img-fluid" alt="Responsive image" height="30%" width="30%">
+          <br>
+          <div class="row" class="mxauto" style="width: 200px;">
+              <a [routerLink]="['/login']">Already have a login?</a>
+              <div class="container" *ngIf="errorMesgs">
+                  <p *ngFor="let m of errorMesgs">Error: {{m}}</p>
+              </div>
+              <p *ngIf="isMatch == false">{{pwNotMatchpwConfirm}}</p>
+          </div>
+    </div>
+    <br>
+    <form (submit)="register()">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" name="remail" [(ngModel)]="newUser.email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" name="rpassword" [(ngModel)]="newUser.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <div class="form-group">
+          <label for="exampleInputPassword1">Password Confirmation</label>
+          <input type="password" name="rpasswordConfirm" [(ngModel)]="newUser.password_confirm" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
